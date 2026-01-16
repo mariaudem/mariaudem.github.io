@@ -14,3 +14,10 @@ social:
     url: https://www.linkedin.com/in/mariaudem/
   - title: GitHub
     url: https://github.com/mariaudem
+
+color:
+  primary: 1a4d4d    # Tummanvihreä (LinkedIn cover:sta)
+  secondary: 0d2626  # Vielä tummempi vihreä
+  # TAI
+  primary: 1e5959    # Syvä syaani
+  secondary: 0f3333  # Tummempi syaani
