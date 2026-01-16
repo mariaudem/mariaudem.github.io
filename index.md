@@ -32,7 +32,6 @@ Currently seeking opportunities in data analytics and business intelligence.
 
 ## Contact
 
-📧 [your email]  
 💼 [LinkedIn](https://linkedin.com/in/mariaudem)  
 💻 [GitHub](https://github.com/mariaudem)
 
