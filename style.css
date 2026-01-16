@@ -104,10 +104,13 @@ header {
     text-align: center;
 }
 
-header img.img-circle {
-    border: 3px solid #1a4d4d;
+header img.img-responsive {
+    border: none !important;
+    background-color: transparent !important;
     max-width: 250px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+    display: block;
+    box-shadow: none !important;
 }
 
 header .header-content-inner hr {
