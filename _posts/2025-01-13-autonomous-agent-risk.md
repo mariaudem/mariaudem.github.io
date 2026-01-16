@@ -2,7 +2,7 @@
 layout: default
 modal-id: 1
 date: 2026-01-16
-img: /portfolio/autonomous-agent-risk-workflow.webp
+img: autonomous-agent-risk-workflow.webp
 alt: Autonomous AI Risk Workflow
 project-date: Tammikuu 2026
 client: Agentic AI Prototype
