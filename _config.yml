@@ -14,10 +14,3 @@ social:
     url: https://www.linkedin.com/in/mariaudem/
   - title: GitHub
     url: https://github.com/mariaudem
-
-# Cyber Glow - Colorblind Friendly Palette
-color:
-  primary: "#00e5ff"    # Kirkas sähkönsyaani (erottuu vahvasti tummalta pohjalta)
-  secondary: "#0d1117"  # Syvä "Night" musta (vastaa GitHubin tummaa teemaa)
-  accent: "#f0f6fc"     # Off-white tekstille (korkea kontrasti, ei rasita silmiä)
-  star-color: "#00e5ff" # Jos teemassa on tähti-erottimia, pidetään ne syaanina
