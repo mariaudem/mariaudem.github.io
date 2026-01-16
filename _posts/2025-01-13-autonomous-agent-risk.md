@@ -1,10 +1,11 @@
 ---
 layout: default
 modal-id: 1
+title: Autonomous Risk Intelligence
 date: 2026-01-16
 img: autonomous-agent-risk-workflow.webp
 alt: Autonomous AI Risk Workflow
-project-date: Tammikuu 2026
+project-date: January 2026
 client: Agentic AI Prototype
 category: AI Engineering
 description: |
