@@ -14,3 +14,9 @@ social:
     url: https://www.linkedin.com/in/mariaudem/
   - title: GitHub
     url: https://github.com/mariaudem
+
+# Uudet yhtenäiset värit (vastaavat CSS-muutoksia)
+color:
+  primary: "#1a4d4d"    # Tumma petroli (About-osio)
+  secondary: "#0d1117"  # GitHub musta (Navigaatio)
+  secondary-dark: "#090c10"
