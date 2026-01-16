@@ -23,6 +23,10 @@ Currently seeking opportunities in data analytics and business intelligence.
 
 **Challenge:** Social media monitoring requires analyzing thousands of unstructured tweets - manual analysis is slow, inconsistent, and doesn't scale.
 
+**Dataset:** Analyzed 5,000 tweets sampled from 60,000+ tweet corpus (Kaggle ChatGPT dataset) - achieving 8.3% sample coverage with reproducible random sampling (random_state=42).
+
+**Scalability:** Sample size chosen to balance statistical reliability (~1.4% margin of error) with API cost constraints. Architecture supports full dataset analysis with proportional compute resources.
+
 **Solution:** Built a multi-agent AI system using CrewAI orchestration: Hunter agent detects anomalies (high recall), Critic agent validates with severity scoring (1-10), Sorter agent dynamically prioritizes findings across the full dataset.
 
 **Impact:** Analyzed 5,000 tweets in ~20 minutes - achieving 90% time reduction vs. manual deep analysis. Produced prioritized risk reports with self-correction loops for data integrity.
