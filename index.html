@@ -1,3 +1,83 @@
 ---
 layout: default
 ---
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="{{ site.baseurl }}/img/profile.png" alt="">
+                <div class="intro-text">
+                    <span class="name">Maria Grönqvist-Lior</span>
+                    <hr class="star-light">
+                    <span class="skills">Data Analyst - Power BI - Python - AI & Automation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Portfolio</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            {% for post in site.posts %}
+            <div class="col-sm-4 portfolio-item">
+                <a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="{{ site.baseurl }}/img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>About</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <p>Professional description about your background, skills, and interests here.</p>
+            </div>
+            <div class="col-lg-4">
+                <p>Additional paragraph or call to action.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Contact Me</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            {% include contact.html %}
+        </div>
+    </div>
+</section>
+
+<!-- Scroll to Top Button (optional) -->
+<a href="#" class="scroll-top"><i class="fa fa-angle-up"></i></a>
