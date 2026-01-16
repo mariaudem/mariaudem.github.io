@@ -16,7 +16,7 @@ body {
 }
 
 .text-primary {
-    color: #18bc9c;
+    color: #00e5ff;
 }
 
 p {
@@ -37,7 +37,7 @@ a.active {
 }
 
 a {
-    color: #18bc9c;
+    color: #00e5ff;
 }
 
 a:hover,
@@ -96,7 +96,7 @@ h6 {
 
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus {
-    color: #18bc9c;
+    color: #00e5ff;
 }
 
 .navbar-custom .nav li a {
@@ -134,7 +134,7 @@ header {
     width: 100%;
     min-height: auto;
     padding: 150px 0 100px 0;
-    background: #18bc9c;
+    background: #00e5ff;
     color: #fff;
 }
 
@@ -265,7 +265,7 @@ section h2 {
 /* About Section */
 
 #about {
-    background: #18bc9c;
+    background: #00e5ff;
     color: #fff;
 }
 
@@ -291,7 +291,7 @@ section h2 {
 }
 
 #about hr.star-light:after {
-    background-color: #18bc9c;
+    background-color: #00e5ff;
 }
 
 #about hr.star-primary:after {
@@ -369,7 +369,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #18bc9c;
+    background-color: #00e5ff;
 }
 
 /* Scroll to Top Button */
@@ -440,7 +440,7 @@ hr.star-light {
 
 hr.star-light:after {
     color: #fff;
-    background-color: #18bc9c;
+    background-color: #00e5ff;
 }
 
 /* Portfolio Modal */
