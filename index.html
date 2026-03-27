@@ -16,17 +16,15 @@
     --border-hi: rgba(255,255,255,0.13);
     --ink:       #f0ece3;
     --mid:       #b8b2a4;
-    --muted:     #6e6a60;
+    --muted:     #9a9690;
     --accent:    #7ecbb5;
     --accent-dk: #2e6b5e;
     --accent-bg: rgba(126,203,181,0.10);
     --warm:      #d4956a;
     --warm-bg:   rgba(212,149,106,0.10);
   }
-
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
@@ -36,8 +34,6 @@
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
   }
-
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -46,11 +42,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 40px;
-    background: rgba(26,24,20,0.85);
+    background: rgba(26,24,20,0.88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-
   .nav-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.15rem;
@@ -59,7 +54,6 @@
     text-decoration: none;
     letter-spacing: 0.02em;
   }
-
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a {
     font-size: 0.8rem;
@@ -71,22 +65,13 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--accent); }
-
-  /* ── PAGE WRAPPER ── */
-  .page {
-    max-width: 1060px;
-    margin: 0 auto;
-    padding: 100px 24px 60px;
-  }
-
-  /* ── BENTO GRID ── */
+  .page { max-width: 1060px; margin: 0 auto; padding: 100px 24px 60px; }
   .bento {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: auto;
     gap: 12px;
   }
-
   .cell {
     background: var(--card);
     border: 1px solid var(--border);
@@ -96,30 +81,21 @@
     overflow: hidden;
     position: relative;
   }
-
-  .cell:hover {
-    border-color: var(--border-hi);
-    background: var(--card-hi);
-  }
-
-  /* Grid placements */
-  .cell-hero     { grid-column: span 8; }
+  .cell:hover { border-color: var(--border-hi); background: var(--card-hi); }
   .cell-photo    { grid-column: span 4; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .cell-hero     { grid-column: span 8; }
+  .cell-about    { grid-column: span 7; }
+  .cell-skills   { grid-column: span 5; }
   .cell-stat-a   { grid-column: span 3; }
   .cell-stat-b   { grid-column: span 3; }
   .cell-stat-c   { grid-column: span 6; }
-  .cell-about    { grid-column: span 7; }
-  .cell-skills   { grid-column: span 5; }
   .cell-proj-big { grid-column: span 8; }
   .cell-proj-sm  { grid-column: span 4; }
   .cell-proj-sm2 { grid-column: span 4; }
   .cell-proj-sm3 { grid-column: span 4; }
   .cell-proj-sm4 { grid-column: span 4; }
   .cell-exp      { grid-column: span 12; }
-  .cell-contact  { grid-column: span 6; }
-  .cell-cta      { grid-column: span 6; }
-
-  /* ── HERO CELL ── */
+  .cell-contact  { grid-column: span 12; }
   .hero-eyebrow {
     font-size: 0.72rem;
     font-weight: 500;
@@ -131,12 +107,7 @@
     align-items: center;
     gap: 10px;
   }
-  .hero-eyebrow::before {
-    content: '';
-    width: 24px; height: 1px;
-    background: var(--accent);
-  }
-
+  .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
   h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.6rem, 4.5vw, 4rem);
@@ -145,24 +116,9 @@
     color: var(--ink);
     margin-bottom: 6px;
   }
-
-  .hero-aka {
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 20px;
-  }
-
-  .hero-desc {
-    font-size: 0.97rem;
-    color: var(--mid);
-    line-height: 1.8;
-    max-width: 480px;
-    margin-bottom: 28px;
-  }
-
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
-
+  .hero-aka { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 20px; }
+  .hero-desc { font-size: 0.97rem; color: var(--mid); line-height: 1.8; max-width: 480px; margin-bottom: 28px; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -175,282 +131,174 @@
     border-radius: 50px;
     transition: all 0.2s;
   }
-
   .btn-primary { background: var(--accent); color: #0f1f1b; }
   .btn-primary:hover { background: #9dd9c7; }
-  .btn-outline { border: 1px solid var(--border-hi); color: var(--mid); }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ── PHOTO CELL ── */
-  .photo-wrap {
-    width: 100%;
-    max-width: 220px;
-    aspect-ratio: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    border: none;
-  }
-  .photo-wrap img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .photo-initials {
-    width: 100%;
-    height: 100%;
-    background: var(--accent-bg);
-    display: flex;
+  .btn-ghost {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 0.05em;
+    gap: 6px;
+    padding: 10px 4px;
+    transition: color 0.2s;
   }
-
-  /* ── STAT CELLS ── */
+  .btn-ghost:hover { color: var(--accent); }
+  .photo-wrap { width: 100%; max-width: 220px; aspect-ratio: 1; border-radius: 16px; overflow: hidden; border: none; }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-initials {
+    width: 100%; height: 100%;
+    background: var(--accent-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 600;
+    color: var(--accent); letter-spacing: 0.05em;
+  }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 6px;
+    font-size: 2.6rem; font-weight: 600;
+    color: var(--ink); line-height: 1; margin-bottom: 6px;
   }
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.4;
-  }
-
+  .stat-label { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
   .cell-accent-green { background: var(--accent-dk); border-color: transparent; }
   .cell-accent-green .stat-num { color: #fff; }
-  .cell-accent-green .stat-label { color: rgba(255,255,255,0.65); }
-
+  .cell-accent-green .stat-label { color: rgba(255,255,255,0.72); }
   .cell-accent-warm { background: var(--warm-bg); border-color: rgba(212,149,106,0.2); }
   .cell-accent-warm .stat-num { color: var(--warm); }
-
-  /* ── SECTION LABELS ── */
+  .cell-accent-warm .stat-label { color: var(--muted); }
   .cell-label {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
   }
-
   h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 14px;
+    font-size: 1.6rem; font-weight: 600;
+    color: var(--ink); line-height: 1.2; margin-bottom: 14px;
   }
-
-  p.body-text {
-    font-size: 0.92rem;
-    color: var(--mid);
-    line-height: 1.85;
-    margin-bottom: 14px;
-  }
+  p.body-text { font-size: 0.92rem; color: var(--mid); line-height: 1.85; margin-bottom: 14px; }
   p.body-text:last-child { margin-bottom: 0; }
-
-  /* ── SKILLS ── */
   .skill-group { margin-bottom: 18px; }
   .skill-group:last-child { margin-bottom: 0; }
   .skill-group-title {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
   }
   .pills { display: flex; flex-wrap: wrap; gap: 6px; }
-  .pill {
-    font-size: 0.76rem;
-    padding: 4px 11px;
-    border-radius: 50px;
-    white-space: nowrap;
-  }
+  .pill { font-size: 0.76rem; padding: 4px 11px; border-radius: 50px; white-space: nowrap; }
   .pill-domain { background: var(--accent-bg); color: var(--accent); border: 1px solid rgba(126,203,181,0.2); }
   .pill-tech   { background: rgba(255,255,255,0.04); color: var(--mid); border: 1px solid var(--border); }
   .pill-warm   { background: var(--warm-bg); color: var(--warm); border: 1px solid rgba(212,149,106,0.2); }
-
-  /* ── PROJECT CELLS ── */
   .proj-tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 50px;
-    margin-bottom: 12px;
+    display: inline-block; font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 50px; margin-bottom: 12px;
   }
   .tag-ai   { background: var(--accent-bg); color: var(--accent); }
   .tag-data { background: rgba(180,140,220,0.12); color: #c09de0; }
   .tag-sql  { background: var(--warm-bg); color: var(--warm); }
-
   .proj-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 8px;
-    line-height: 1.3;
+    font-size: 1.2rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 8px; line-height: 1.3;
   }
-
-  .proj-desc {
-    font-size: 0.85rem;
-    color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
+  .proj-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; margin-bottom: 16px; }
   .stack-row { display: flex; flex-wrap: wrap; gap: 5px; }
   .stack-tag {
-    font-size: 0.72rem;
-    color: var(--muted);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    padding: 2px 8px;
-    border-radius: 4px;
+    font-size: 0.72rem; color: var(--muted);
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    padding: 2px 8px; border-radius: 4px;
   }
-
   .proj-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 16px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    transition: gap 0.2s;
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 16px; font-size: 0.8rem; font-weight: 500;
+    color: var(--accent); text-decoration: none; transition: gap 0.2s;
   }
   .proj-link:hover { gap: 10px; }
-
-  /* ── EXPERIENCE ── */
-  .exp-grid {
+  .exp-timeline { display: flex; flex-direction: column; }
+  .exp-item {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: 170px 1fr;
+    gap: 0 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
   }
-
-  .exp-item {}
+  .exp-item:first-child { border-top: none; padding-top: 0; }
+  .exp-item:last-child { padding-bottom: 0; }
   .exp-dates {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 6px;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 4px; line-height: 1.4;
   }
+  .exp-org { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
   .exp-role {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 3px;
-  }
-  .exp-org {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-bottom: 10px;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 8px;
   }
   .exp-points { list-style: none; }
   .exp-points li {
-    font-size: 0.83rem;
-    color: var(--mid);
-    line-height: 1.65;
-    padding-left: 14px;
-    position: relative;
-    margin-bottom: 3px;
+    font-size: 0.83rem; color: var(--mid);
+    line-height: 1.65; padding-left: 14px;
+    position: relative; margin-bottom: 3px;
   }
   .exp-points li::before { content: '—'; position: absolute; left: 0; color: var(--border-hi); }
-
-  .exp-divider {
-    width: 1px;
-    background: var(--border);
-    display: none;
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
   }
-
-  /* ── CONTACT ── */
-  .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .contact-text p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; margin-bottom: 20px; }
+  .contact-links { display: flex; flex-direction: column; gap: 8px; }
   .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--mid);
-    font-size: 0.87rem;
-    padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--mid);
+    font-size: 0.85rem; padding: 11px 13px;
     background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: all 0.2s;
+    border: 1px solid var(--border); border-radius: 12px; transition: all 0.2s;
   }
   .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
-
   .contact-icon {
-    width: 32px; height: 32px;
-    border-radius: 8px;
+    width: 30px; height: 30px; border-radius: 8px;
     background: var(--accent-bg);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .contact-icon svg { width: 15px; height: 15px; fill: var(--accent); }
-
-  /* ── CTA CELL ── */
-  .cta-cell {
-    background: linear-gradient(135deg, #1e3b33 0%, #2a2720 100%);
-    border-color: rgba(126,203,181,0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .contact-icon svg { width: 14px; height: 14px; fill: var(--accent); }
+  .contact-quote {
+    background: linear-gradient(135deg, #1e3b33 0%, #232019 100%);
+    border: 1px solid rgba(126,203,181,0.12);
+    border-radius: 16px; padding: 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
   .cta-quote {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 1.2rem; font-style: italic;
+    color: var(--ink); line-height: 1.55; margin-bottom: 16px;
   }
-  .cta-note { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
-
-  /* ── FOOTER ── */
+  .cta-note { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
   footer {
-    max-width: 1060px;
-    margin: 0 auto;
+    max-width: 1060px; margin: 0 auto;
     padding: 24px 24px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
-    color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.78rem; color: var(--muted);
     border-top: 1px solid var(--border);
   }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .cell-hero     { grid-column: span 12; }
     .cell-photo    { grid-column: span 12; padding: 28px; }
-    .cell-stat-a, .cell-stat-b { grid-column: span 4; }
-    .cell-stat-c   { grid-column: span 4; }
+    .cell-hero     { grid-column: span 12; }
     .cell-about    { grid-column: span 12; }
     .cell-skills   { grid-column: span 12; }
+    .cell-stat-a, .cell-stat-b { grid-column: span 4; }
+    .cell-stat-c   { grid-column: span 4; }
     .cell-proj-big { grid-column: span 12; }
     .cell-proj-sm, .cell-proj-sm2,
     .cell-proj-sm3, .cell-proj-sm4 { grid-column: span 6; }
-    .cell-contact, .cell-cta { grid-column: span 12; }
-    .exp-grid { grid-template-columns: 1fr; gap: 28px; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 4px; }
   }
-
   @media (max-width: 600px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -462,8 +310,6 @@
     .cell-proj-sm3, .cell-proj-sm4 { grid-column: span 12; }
     footer { flex-direction: column; gap: 6px; text-align: center; }
   }
-
-  /* ── FADE IN ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -491,21 +337,7 @@
 <div class="page">
 <div class="bento">
 
-  <!-- HERO -->
-  <div class="cell cell-hero">
-    <div class="hero-eyebrow">Finland · Open to remote</div>
-    <h1>Maria<br>Udem</h1>
-    <p class="hero-aka">also known as Maria Grönqvist-Lior</p>
-    <p class="hero-desc">
-      AI content evaluator and early childhood education specialist. I bring 20+ years of structured documentation, curriculum design, and iterative feedback skills — now applied to AI training workflows, data projects, and agentic AI prototyping.
-    </p>
-    <div class="btn-row">
-      <a href="#projects" class="btn btn-primary">View my work</a>
-      <a href="#contact" class="btn btn-outline">Get in touch</a>
-    </div>
-  </div>
-
-  <!-- PHOTO -->
+  <!-- ROW 1: Photo LEFT (gaze direction into page) + Hero RIGHT -->
   <div class="cell cell-photo">
     <div class="photo-wrap">
       <img src="img/profile.webp" alt="Maria Udem"
@@ -514,23 +346,20 @@
     </div>
   </div>
 
-  <!-- STATS -->
-  <div class="cell cell-stat-a cell-accent-green">
-    <div class="stat-num">20+</div>
-    <div class="stat-label">Years in structured program design & documentation</div>
+  <div class="cell cell-hero">
+    <div class="hero-eyebrow">Finland · Open to remote</div>
+    <h1>Maria<br>Udem</h1>
+    <p class="hero-aka">also known as Maria Grönqvist-Lior</p>
+    <p class="hero-desc">
+      AI content evaluator and early childhood education specialist. I bring 20+ years of structured documentation, curriculum design, and iterative feedback skills — now applied to AI training workflows, data projects, and agentic AI prototyping.
+    </p>
+    <div class="btn-row">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="#projects" class="btn-ghost">View my work →</a>
+    </div>
   </div>
 
-  <div class="cell cell-stat-b">
-    <div class="stat-num">2025</div>
-    <div class="stat-label">DataCamp Power BI certification</div>
-  </div>
-
-  <div class="cell cell-stat-c cell-accent-warm">
-    <div class="stat-num">ECE × AI</div>
-    <div class="stat-label">Deep domain expertise combined with hands-on AI development and prompt engineering experience — a rare combination.</div>
-  </div>
-
-  <!-- ABOUT -->
+  <!-- ROW 2: About + Skills — context before numbers -->
   <div class="cell cell-about" id="about">
     <div class="cell-label">About</div>
     <h2>Who I am</h2>
@@ -545,7 +374,6 @@
     </p>
   </div>
 
-  <!-- SKILLS -->
   <div class="cell cell-skills">
     <div class="cell-label">Skills</div>
     <div class="skill-group">
@@ -553,13 +381,13 @@
       <div class="pills">
         <span class="pill pill-domain">Early Childhood Education</span>
         <span class="pill pill-domain">Program Design</span>
-        <span class="pill pill-domain">Safety & Risk Management</span>
+        <span class="pill pill-domain">Safety &amp; Risk Management</span>
         <span class="pill pill-domain">VASU Assessment</span>
         <span class="pill pill-domain">Structured Documentation</span>
       </div>
     </div>
     <div class="skill-group">
-      <div class="skill-group-title">AI & Technical</div>
+      <div class="skill-group-title">AI &amp; Technical</div>
       <div class="pills">
         <span class="pill pill-tech">Python</span>
         <span class="pill pill-tech">CrewAI</span>
@@ -584,7 +412,21 @@
     </div>
   </div>
 
-  <!-- PROJECT — BIG -->
+  <!-- ROW 3: Stats — after context -->
+  <div class="cell cell-stat-a cell-accent-green">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Years in structured program design &amp; documentation</div>
+  </div>
+  <div class="cell cell-stat-b">
+    <div class="stat-num">2025</div>
+    <div class="stat-label">DataCamp Power BI certification</div>
+  </div>
+  <div class="cell cell-stat-c cell-accent-warm">
+    <div class="stat-num">ECE × AI</div>
+    <div class="stat-label">Deep domain expertise combined with hands-on AI development and prompt engineering — a rare combination.</div>
+  </div>
+
+  <!-- ROWS 4–5: Projects -->
   <div class="cell cell-proj-big" id="projects">
     <span class="proj-tag tag-ai">Agentic AI</span>
     <div class="proj-title">Autonomous Risk Intelligence Pipeline</div>
@@ -598,13 +440,22 @@
       <span class="stack-tag">Multi-agent orchestration</span>
       <span class="stack-tag">ETL</span>
     </div>
-    <a class="proj-link" href="https://github.com/mariaudem/Twitter-Performance-Risk-Analysis" target="_blank" rel="noopener">
-      View on GitHub →
-    </a>
+    <a class="proj-link" href="https://github.com/mariaudem/Twitter-Performance-Risk-Analysis" target="_blank" rel="noopener">View on GitHub →</a>
   </div>
 
-  <!-- PROJECT — SM1 -->
   <div class="cell cell-proj-sm">
+    <span class="proj-tag tag-ai">AI Tool · In development</span>
+    <div class="proj-title">AI-Assisted Professional Documentation Tool</div>
+    <p class="proj-desc">AI-assisted documentation tool applying pedagogical domain expertise to a professional workflow. RAG architecture with domain-specific quality evaluation. Pilot phase.</p>
+    <div class="stack-row">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">RAG</span>
+      <span class="stack-tag">LLM integration</span>
+      <span class="stack-tag">Streamlit</span>
+    </div>
+  </div>
+
+  <div class="cell cell-proj-sm2">
     <span class="proj-tag tag-data">Power BI</span>
     <div class="proj-title">Academic Intervention Dashboard</div>
     <p class="proj-desc">ROI analysis of test prep interventions on the socioeconomic achievement gap.</p>
@@ -615,8 +466,7 @@
     <a class="proj-link" href="https://github.com/mariaudem/AcademicInterventionStrategyDashboard" target="_blank" rel="noopener">GitHub →</a>
   </div>
 
-  <!-- PROJECT — SM2 -->
-  <div class="cell cell-proj-sm2">
+  <div class="cell cell-proj-sm3">
     <span class="proj-tag tag-data">Power BI</span>
     <div class="proj-title">GlobalVentures Financial Dashboard</div>
     <p class="proj-desc">Financial trend analysis using Power BI with the Microsoft Financial Sample dataset.</p>
@@ -627,8 +477,7 @@
     <a class="proj-link" href="https://github.com/mariaudem/GlobalVentures-PowerBI-Dashboard" target="_blank" rel="noopener">GitHub →</a>
   </div>
 
-  <!-- PROJECT — SM3 -->
-  <div class="cell cell-proj-sm3">
+  <div class="cell cell-proj-sm4">
     <span class="proj-tag tag-sql">SQL</span>
     <div class="proj-title">SQL Murder Mystery</div>
     <p class="proj-desc">Structured SQL investigation demonstrating relational database proficiency — JOINs, subqueries, logical deduction.</p>
@@ -639,95 +488,106 @@
     <a class="proj-link" href="https://github.com/mariaudem/SQL-Murder-Mystery" target="_blank" rel="noopener">GitHub →</a>
   </div>
 
-  <!-- PROJECT — PRIVATE -->
-  <div class="cell cell-proj-sm4">
-    <span class="proj-tag tag-ai">AI Tool · In development</span>
-    <div class="proj-title">AI-Assisted Professional Documentation Tool</div>
-    <p class="proj-desc">AI-assisted documentation tool applying pedagogical domain expertise to a professional workflow. LLM-based content generation with domain-specific quality evaluation. Currently in pilot phase.</p>
-    <div class="stack-row">
-      <span class="stack-tag">Python</span>
-      <span class="stack-tag">LLM integration</span>
-      <span class="stack-tag">Prompt engineering</span>
-      <span class="stack-tag">Domain expertise</span>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
+  <!-- ROW 6: Experience — readable timeline, not cramped 3-column grid -->
   <div class="cell cell-exp" id="experience">
     <div class="cell-label">Experience</div>
-    <div class="exp-grid">
+    <div class="exp-timeline">
 
       <div class="exp-item">
-        <div class="exp-dates">2025 – Present</div>
-        <div class="exp-role">Independent AI Development</div>
-        <div class="exp-org">Personal project</div>
-        <ul class="exp-points">
-          <li>Developing an AI-assisted tool applying ECE domain expertise to a real professional workflow</li>
-          <li>Extensive hands-on experience evaluating AI-generated content and iterating on prompts</li>
-          <li>Core AI trainer competencies: domain knowledge, content evaluation, iterative improvement</li>
-        </ul>
+        <div class="exp-left">
+          <div class="exp-dates">2025 – Present</div>
+          <div class="exp-org">Personal project</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Independent AI Development</div>
+          <ul class="exp-points">
+            <li>Developing an AI-assisted tool applying ECE domain expertise to a real professional workflow</li>
+            <li>Extensive hands-on experience evaluating AI-generated content and iterating on prompts</li>
+            <li>Core AI trainer competencies: domain knowledge, content evaluation, iterative improvement</li>
+          </ul>
+        </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-dates">2016 – 2019</div>
-        <div class="exp-role">Founder & Program Director</div>
-        <div class="exp-org">Monsterpuppet Tmi — Finland</div>
-        <ul class="exp-points">
-          <li>Designed and delivered structured after-school hobby club programs for children aged 7–9</li>
-          <li>Managed all business operations: logistics, family communication, financial administration</li>
-          <li>Documented program outcomes and adapted approaches iteratively</li>
-        </ul>
+        <div class="exp-left">
+          <div class="exp-dates">2016 – 2019</div>
+          <div class="exp-org">Monsterpuppet Tmi — Finland</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Founder &amp; Program Director</div>
+          <ul class="exp-points">
+            <li>Designed and delivered structured after-school hobby club programs for children aged 7–9</li>
+            <li>Managed all business operations: logistics, family communication, financial administration</li>
+            <li>Documented program outcomes and adapted approaches iteratively</li>
+          </ul>
+        </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-dates">2002 – 2006 · 2011 – Present</div>
-        <div class="exp-role">Kindergarten Teacher</div>
-        <div class="exp-org">Various kindergartens — Helsinki Capital Area · 20+ years</div>
-        <ul class="exp-points">
-          <li>Planned and executed daily activity programs for young children across multiple settings</li>
-          <li>Produced structured written documentation using the VASU assessment framework</li>
-          <li>Collaborated with multidisciplinary teams: special ed coordinators, families, support staff</li>
-        </ul>
+        <div class="exp-left">
+          <div class="exp-dates">2002–2006 · 2011–Present</div>
+          <div class="exp-org">Various kindergartens — Helsinki · 20+ years</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Kindergarten Teacher</div>
+          <ul class="exp-points">
+            <li>Planned and executed daily activity programs for young children across multiple settings</li>
+            <li>Produced structured written documentation using the VASU assessment framework</li>
+            <li>Collaborated with multidisciplinary teams: special ed coordinators, families, support staff</li>
+          </ul>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <!-- CONTACT -->
+  <!-- ROW 7: Contact — unified, no duplicate CTA -->
   <div class="cell cell-contact" id="contact">
     <div class="cell-label">Contact</div>
-    <h2>Let's work together</h2>
-    <p class="body-text">Open to remote roles in AI training, data annotation, content quality review, or program documentation. Available as an independent contractor via Monsterpuppet Tmi (Finnish sole trader — can invoice internationally).</p>
-    <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#bbd6d2d6d6dec9fbdcd6dad2d795d8d4d6" class="contact-link">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <span class="__cf_email__" data-cfemail="7f121612121a0d3f18121e1613511c1012">[email&#160;protected]</span>
-      </a>
-      <a href="https://linkedin.com/in/mariaudem" target="_blank" rel="noopener" class="contact-link">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-        </div>
-        linkedin.com/in/mariaudem
-      </a>
-      <a href="https://github.com/mariaudem" target="_blank" rel="noopener" class="contact-link">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-        </div>
-        github.com/mariaudem
-      </a>
+    <div class="contact-inner">
+
+      <div class="contact-text">
+        <h2>Let's work together</h2>
+        <p>Open to remote roles in AI training, data annotation, content quality review, or program documentation. Available as an independent contractor via Monsterpuppet Tmi — can invoice internationally.</p>
+        <a href="mailto:mimmer@gmail.com" class="btn btn-primary" style="margin-top:4px;">Send an email</a>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:mimmer@gmail.com" class="contact-link">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          mimmer@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/mariaudem" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </div>
+          linkedin.com/in/mariaudem
+        </a>
+        <a href="https://github.com/mariaudem" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </div>
+          github.com/mariaudem
+        </a>
+      </div>
+
+      <div class="contact-quote">
+        <p class="cta-quote">"Domain knowledge that most AI trainers simply don't have."</p>
+        <p class="cta-note">20+ years of structured observation, documentation, and iterative improvement in early childhood education — skills that transfer directly to evaluating and improving AI-generated content.</p>
+      </div>
+
     </div>
   </div>
 
-  <!-- CTA -->
-  <div class="cell cell-cta cta-cell">
-    <div>
-      <div class="cell-label" style="color: var(--accent);">What I bring</div>
-      <p class="cta-quote">"Domain knowledge that most AI trainers simply don't have."</p>
-      <p class="cta-note">
-        20+ years of structured observation, documentation, and iterative improvement in early childhood education — skills that transfer directly to evaluating and improving AI-generated content.
-      </p>
-    </div>
-    <div>
-      <a href="/cdn-cgi/l/email-protection#660b0f0b0b031426010b070f0a4805090b" class="btn btn-primary">
+</div>
+</div>
+
+<footer>
+  <span>Maria Udem (Grönqvist-Lior) · Finland</span>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
